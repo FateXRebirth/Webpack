@@ -1,3 +1,4 @@
+import '../css/style.scss';
 
 var submit = document.querySelector('input[type="submit"]');
 submit.addEventListener('click', handleSubmit);
