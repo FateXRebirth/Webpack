@@ -17,6 +17,7 @@ const devMode = process.env.NODE_ENV !== 'production';
  * name       - project name
  * entry      - js entry
  * template   - html template
+ * image     - images
  * output     - path output
  * publicPath - prefix path for static file, used to on the production mode
  */
@@ -62,7 +63,7 @@ module.exports = ({
     },
     devServer: {
       before(app, server) {
-        chokidar.watch(htmlPath).on('all', function() {
+        chokidar.watch(htmlPath).on('all', () => {
           server.sockWrite(server.sockets, 'content-changed');
         })
       },
